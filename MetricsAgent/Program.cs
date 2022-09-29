@@ -2,6 +2,7 @@ namespace MetricsAgent
 {
     public class Program
     {
+        //starting homework
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
