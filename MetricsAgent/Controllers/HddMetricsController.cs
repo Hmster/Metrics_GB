@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MetricsAgent.Controllers
 {
-    [Route("api/metrics/ram")]
+    [Route("api/metrics/hdd")]
     [ApiController]
-    public class RamMetricController : ControllerBase
+    public class HddMetricsController : ControllerBase
     {
         [HttpGet("from/{fromTime}/to/{toTime}")]
-        public IActionResult GetRamMetrics([FromRoute] TimeSpan fromTIme, [FromRoute] TimeSpan toTime)
+        public IActionResult GetHddMetrics([FromRoute] TimeSpan fromTIme, [FromRoute] TimeSpan toTime)
         {
             return Ok();
         }
