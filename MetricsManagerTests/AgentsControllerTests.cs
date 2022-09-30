@@ -1,6 +1,7 @@
 ﻿using MetricsManager.Controllers;
 using MetricsManager.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,35 @@ namespace MetricsManagerTests
         {
             AgentInfo agentInfo = new AgentInfo() { AgentId = agentId, Enable = true };
             var actionResult = _agentsController.RegisterAgent(agentInfo);
+            Assert.IsAssignableFrom<IActionResult>(actionResult);
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void EnableByIdTest(int agentId)
+        {
+            AgentInfo agentInfo = new AgentInfo() { AgentId = agentId, Enable = false };
+            var actionResult = _agentsController.EnableAgentById(agentId);
+            Assert.IsAssignableFrom<IActionResult>(actionResult);
+        }
+
+        [Theory]
+        [InlineData(5)]
+        public void DisableByIdTest(int agentId)
+        {
+            AgentInfo agentInfo = new AgentInfo() { AgentId = agentId, Enable = true };
+            var actionResult = _agentsController.DisableAgentById(agentId);
+            Assert.IsAssignableFrom<IActionResult>(actionResult);
+        }
+
+        [Theory]
+        [InlineData(5)]
+        [InlineData(15)]
+        [InlineData(25)]
+        public void GetAllAgentsTest(int agentId)
+        {
+            AgentInfo agentInfo = new AgentInfo() { AgentId = agentId, Enable = true };
+            var actionResult = _agentsController.GetAllAgents();
             Assert.IsAssignableFrom<IActionResult>(actionResult);
         }
     }
