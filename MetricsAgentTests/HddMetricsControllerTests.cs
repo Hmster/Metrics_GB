@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetricsAgentTests
 {
-    internal class HddMetricsControllerTests
+    public class HddMetricsControllerTests
     {
     }
 }

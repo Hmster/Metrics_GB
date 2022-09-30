@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetricsManagerTests
 {
-    internal class NetworkMetricsControllerTests
+    public class NetworkMetricsControllerTests
     {
     }
 }
